@@ -1,0 +1,11 @@
+[Unit]
+Description=equilibria service node
+After=network-online.target
+[Service]
+Type=simple
+User=root
+ExecStart=/root/bin/daemon --non-interactive --service-node
+Restart=always
+RestartSec=30s
+[Install]
+WantedBy=multi-user.target
