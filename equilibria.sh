@@ -1,18 +1,18 @@
 #! /bin/bash
 
 install_checks () {
-if [ "$(ls -A ~/bin)" ]; then
-  read -p "Folder '~/bin' from another node already exists. Do you want us to remove it? (Y/N)"
-  if [[ $REPLY =~ ^[Yy]$ ]]
-  then
-    rm -r ~\bin
-    echo "Folder deleted. Proceeding with installation."
+#if [ "$(ls -A ~/bin)" ]; then
+#  read -p "Folder '~/bin' from another node already exists. Do you want us to remove it? (Y/N)"
+#  if [[ $REPLY =~ ^[Yy]$ ]]
+#  then
+#    rm -r ~\bin
+#    echo "Folder deleted. Proceeding with installation."
     install_node
-  else
-    echo "User aborted installation."
-    exit 1
-  fi
-fi
+#  else
+#    echo "User aborted installation."
+#    exit 1
+#  fi
+#fi
 }
 install_node () {
   sudo apt install wget unzip
