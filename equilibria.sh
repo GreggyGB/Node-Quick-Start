@@ -1,6 +1,7 @@
 #! /bin/bash
 
 install_checks () {
+sudo apt install git
 #if [ "$(ls -A ~/bin)" ]; then
 #  read -p "Folder '~/bin' from another node already exists. Do you want us to remove it? (Y/N)"
 #  if [[ $REPLY =~ ^[Yy]$ ]]
