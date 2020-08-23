@@ -29,3 +29,8 @@
 ### To check how it is working:
 
 `bash equilibria.sh log`
+
+### To generate staking transaction:
+
+`bash equilibria.sh prepare_sn`
+
