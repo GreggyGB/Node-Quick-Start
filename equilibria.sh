@@ -32,6 +32,10 @@ install_node () {
   sudo systemctl enable eqnode.service
 }
 
+prepare_sn () {
+  ~/bin/daemon prepare_sn
+}
+
 start () {
   systemctl start eqnode.service
   echo Service node started to check it works use bash equilibria.sh log
@@ -55,6 +59,7 @@ update () {
 }
 case "$1" in
   install ) install_checks ;;
+  prepare_sn ) prepare_sn ;;
   start ) start ;;
   stop ) stop_all_nodes ;;
   status ) status ;;
