@@ -6,7 +6,7 @@
 ## Installation
 
 ### Pull this script from github
-`git clone https://github.com/GreggyGB/EquilibriaNodeRoot.git Equilibria`
+`git clone https://github.com/Equilibria/Node-Quick-Start.git Equilibria`
 
 ### Go into newly created folder
 
