@@ -57,6 +57,12 @@ log () {
 update () {
   git pull
 }
+
+fork_update () {
+  rm -r ~/bin
+  install_node
+}
+
 case "$1" in
   install ) install_checks ;;
   prepare_sn ) prepare_sn ;;
@@ -65,4 +71,5 @@ case "$1" in
   status ) status ;;
   log ) log ;;
   update ) update ;;
+  fork_update ) fork_update ;;
 esac
