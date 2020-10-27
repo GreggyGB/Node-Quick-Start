@@ -34,3 +34,8 @@
 
 `bash equilibria.sh prepare_sn`
 
+### To upgrade node to 7.0.1:
+
+'bash equilibria.sh update'
+'bash equilibria.sh fork_update'
+
