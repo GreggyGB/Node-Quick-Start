@@ -21,10 +21,10 @@ install_node () {
   sudo apt-get install  build-essential cmake pkg-config libboost-all-dev libssl-dev libzmq3-dev libunbound-dev libsodium-dev libunwind8-dev liblzma-dev libreadline6-dev libldns-dev libexpat1-dev doxygen graphviz libpgm-dev qttools5-dev-tools libhidapi-dev libusb-dev libprotobuf-dev protobuf-compiler
   git clone --recursive 'https://github.com/EquilibriaCC/Equilibria.git' equilibria && cd equilibria
   git submodule init && git submodule update
-  git checkout v6.0.3
+  git checkout v7.0.1
   make
 
-  cd build/Linux/_HEAD_detached_at_v6.0.3_/release && mv bin ~/
+  cd build/Linux/_HEAD_detached_at_v7.0.1_/release && mv bin ~/
   
   rm /etc/systemd/system/eqnode.service
   cp ~/Equilibria/eqnode.service /etc/systemd/system/
