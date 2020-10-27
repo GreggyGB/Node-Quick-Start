@@ -37,5 +37,6 @@
 ### To upgrade node to 7.0.1:
 
 'bash equilibria.sh update'
+then
 'bash equilibria.sh fork_update'
 
