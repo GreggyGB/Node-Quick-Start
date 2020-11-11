@@ -29,3 +29,14 @@
 ### To check how it is working:
 
 `bash equilibria.sh log`
+
+### To generate staking transaction:
+
+`bash equilibria.sh prepare_sn`
+
+### To upgrade node to 7.0.1:
+
+`bash equilibria.sh update`
+ then
+`bash equilibria.sh fork_update`
+
