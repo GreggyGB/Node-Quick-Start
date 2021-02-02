@@ -51,6 +51,8 @@ update () {
 fork_update () {
   rm -r ~/bin
   install_node
+  sudo systemctl stop eqnode.service
+  sudo systemctl start eqnode.service
 }
 
 case "$1" in
