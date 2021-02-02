@@ -51,6 +51,7 @@ update () {
 
 fork_update () {
   rm -r ~/bin
+  rm -r ~/Equilibria/equilibria
   install_node
   sudo systemctl stop eqnode.service
   sudo systemctl start eqnode.service
