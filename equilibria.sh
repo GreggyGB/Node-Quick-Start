@@ -32,7 +32,8 @@ start () {
 }
 
 status () {
-  systemctl status eqnode.service
+  ~/bin/daemon status
+  #systemctl status eqnode.service
 }
 
 stop_all_nodes () {
@@ -53,6 +54,8 @@ fork_update () {
   install_node
   sudo systemctl stop eqnode.service
   sudo systemctl start eqnode.service
+  ~/bin/daemon status
+  echo Please check the above is showing 8.0.0
 }
 
 case "$1" in
