@@ -52,7 +52,7 @@ update () {
 fork_update () {
   sudo systemctl stop eqnode.service
   rm -r ~/bin
-  cd Equilibria/equilibria
+  cd ~/Equilibria/equilibria
   git pull 'https://github.com/EquilibriaCC/Equilibria.git' v8.0.0
   make
   cd build/Linux/_HEAD_detached_at_v8.0.0_/release && mv bin ~/
