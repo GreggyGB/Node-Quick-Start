@@ -50,13 +50,18 @@ update () {
 }
 
 fork_update () {
-  rm -r ~/bin
-  rm -r ~/Equilibria/equilibria
-  install_node
   sudo systemctl stop eqnode.service
+  rm -r ~/bin
+  cd Equilibria/equilibria
+  git pull 'https://github.com/EquilibriaCC/Equilibria.git' v8.0.0
+  make
+  cd build/Linux/_HEAD_detached_at_v8.0.0_/release && mv bin ~/
+  rm /etc/systemd/system/eqnode.service
+  cp ~/Equilibria/eqnode.service /etc/systemd/system/
+  sudo systemctl daemon-reload
+  sudo systemctl enable eqnode.service
   sudo systemctl start eqnode.service
   ~/bin/daemon status
-  echo Please check the above is showing 8.0.0
 }
 
 case "$1" in
