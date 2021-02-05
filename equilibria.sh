@@ -52,8 +52,9 @@ update () {
 fork_update () {
   sudo systemctl stop eqnode.service
   rm -r ~/bin
-  git pull -f 'https://github.com/EquilibriaCC/Equilibria.git'
+  git pull -f 'https://github.com/EquilibriaCC/Equilibria.git' equilibria
   git checkout v8.0.0
+  cd ~/Equilibria/equilibria
   make
   cd build/Linux/_HEAD_detached_at_v8.0.0_/release && mv bin ~/
   sudo systemctl enable eqnode.service
