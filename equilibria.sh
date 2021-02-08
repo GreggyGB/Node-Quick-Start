@@ -2,29 +2,19 @@
 
 install_checks () {
 sudo apt install git
-#if [ "$(ls -A ~/bin)" ]; then
-#  read -p "Folder '~/bin' from another node already exists. Do you want us to remove it? (Y/N)"
-#  if [[ $REPLY =~ ^[Yy]$ ]]
-#  then
-#    rm -r ~\bin
-#    echo "Folder deleted. Proceeding with installation."
     install_node
-#  else
-#    echo "User aborted installation."
-#    exit 1
-#  fi
-#fi
 }
+
 install_node () {
   sudo apt install wget unzip
   sudo apt update
   sudo apt-get install  build-essential cmake pkg-config libboost-all-dev libssl-dev libzmq3-dev libunbound-dev libsodium-dev libunwind8-dev liblzma-dev libreadline6-dev libldns-dev libexpat1-dev doxygen graphviz libpgm-dev qttools5-dev-tools libhidapi-dev libusb-dev libprotobuf-dev protobuf-compiler
   git clone --recursive 'https://github.com/EquilibriaCC/Equilibria.git' equilibria && cd equilibria
   git submodule init && git submodule update
-  git checkout v7.0.1
+  git checkout v8.0.0
   make
 
-  cd build/Linux/_HEAD_detached_at_v7.0.1_/release && mv bin ~/
+  cd build/Linux/_HEAD_detached_at_v8.0.0_/release && mv bin ~/
   
   rm /etc/systemd/system/eqnode.service
   cp ~/Equilibria/eqnode.service /etc/systemd/system/
@@ -42,7 +32,8 @@ start () {
 }
 
 status () {
-  systemctl status eqnode.service
+  ~/bin/daemon status
+  #systemctl status eqnode.service
 }
 
 stop_all_nodes () {
@@ -59,8 +50,16 @@ update () {
 }
 
 fork_update () {
+  rm -r ~/Equilibria/equilibria
+  git clone --recursive 'https://github.com/EquilibriaCC/Equilibria.git' equilibria && cd equilibria
+  git submodule init && git submodule update
+  git checkout v8.0.0
+  make
+  sudo systemctl stop eqnode.service
   rm -r ~/bin
-  install_node
+  cd build/Linux/_HEAD_detached_at_v8.0.0_/release && mv bin ~/
+  sudo systemctl enable eqnode.service
+  sudo systemctl start eqnode.service
 }
 
 case "$1" in
