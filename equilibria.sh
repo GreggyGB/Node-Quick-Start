@@ -53,11 +53,11 @@ fork_update () {
   rm -r ~/Equilibria/equilibria
   git clone --recursive 'https://github.com/EquilibriaCC/Equilibria.git' equilibria && cd equilibria
   git submodule init && git submodule update
-  git checkout v8.0.0
+  git checkout v8.0.1
   make
   sudo systemctl stop eqnode.service
   rm -r ~/bin
-  cd build/Linux/_HEAD_detached_at_v8.0.0_/release && mv bin ~/
+  cd build/Linux/_HEAD_detached_at_v8.0.1_/release && mv bin ~/
   sudo systemctl enable eqnode.service
   sudo systemctl start eqnode.service
 }
