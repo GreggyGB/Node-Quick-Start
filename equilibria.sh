@@ -17,7 +17,7 @@ install_node () {
   cd build/Linux/_HEAD_detached_at_v9.0.2_/release && mv bin ~/
   
   rm /etc/systemd/system/eqnode.service
-  cp ~/Equilibria/eqnode.service /etc/systemd/system/
+  sudo cp ~/Equilibria/eqnode.service /etc/systemd/system/
   sudo systemctl daemon-reload
   sudo systemctl enable eqnode.service
 }
