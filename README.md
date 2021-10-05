@@ -34,7 +34,7 @@
 
 `bash equilibria.sh prepare_sn`
 
-### To upgrade node to 8.0.0:
+### To upgrade node to latest version:
 
 `bash equilibria.sh update`
  then
