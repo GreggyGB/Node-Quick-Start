@@ -50,6 +50,10 @@ update () {
   git pull
 }
 
+print_sn_key () {
+  ~/bin/daemon print_sn_key
+}
+
 fork_update () {
   rm -r ~/Equilibria/equilibria
   git clone --recursive 'https://github.com/EquilibriaCC/Equilibria.git' equilibria && cd equilibria
@@ -72,4 +76,5 @@ case "$1" in
   log ) log ;;
   update ) update ;;
   fork_update ) fork_update ;;
+  print_sn_key ) print_sn_key ;;
 esac
