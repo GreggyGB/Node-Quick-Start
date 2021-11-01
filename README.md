@@ -34,6 +34,10 @@
 
 `bash equilibria.sh prepare_sn`
 
+### To print service node key:
+
+`bash equilibria.sh print_sn_key`
+
 ### To upgrade node to latest version:
 
 `bash equilibria.sh update`
