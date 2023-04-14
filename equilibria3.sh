@@ -26,7 +26,7 @@ start () {
 }
 
 status () {
-  systemctl status eqnode3.service
+  ~/bin/xeq3 --rpc-bind-port 9251 status
 }
 
 stop_all_nodes () {
