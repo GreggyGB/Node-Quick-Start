@@ -34,12 +34,12 @@ install_node () {
 }
 
 prepare_sn () {
-  ~/bin/xeq1 --rpc-bind-port 9251 prepare_sn
+  ~/bin/xeq3 --rpc-bind-port 9251 prepare_sn
 }
 
 start () {
-  systemctl start eqnode2.service
-  echo Service node started to check it works use bash equilibria.sh log
+  systemctl start eqnode3.service
+  echo Service node started to check it works use bash equilibria3.sh log
 }
 
 status () {
