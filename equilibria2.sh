@@ -34,7 +34,7 @@ install_node () {
 }
 
 prepare_sn () {
-  ~/bin/xeq1 --rpc-bind-port 9241 prepare_sn
+  ~/bin/xeq2 --rpc-bind-port 9241 prepare_sn
 }
 
 start () {
@@ -43,8 +43,7 @@ start () {
 }
 
 status () {
-  bash equilibria.sh status && bash equilibria2.sh status && bash equilibria3.sh status
-  #systemctl status eqnode.service
+  systemctl status eqnode2.service
 }
 
 stop_all_nodes () {
@@ -62,7 +61,7 @@ start_all () {
 }
 
 log () {
-  sudo journalctl -u eqnode.service -af
+  sudo journalctl -u eqnode2.service -af
 }
 
 update () {
