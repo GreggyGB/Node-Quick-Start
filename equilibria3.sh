@@ -43,7 +43,6 @@ start () {
 }
 
 status () {
-  bash equilibria3.sh status
   systemctl status eqnode3.service
 }
 
