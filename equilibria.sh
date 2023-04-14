@@ -19,6 +19,8 @@ install_node () {
   
   rm /etc/systemd/system/eqnode.service
   sudo cp ~/Equilibria/eqnode.service /etc/systemd/system/
+  sudo cp ~/Equilibria/eqnode2.service /etc/systemd/system/
+  sudo cp ~/Equilibria/eqnode3.service /etc/systemd/system/
   cp ~/bin/daemon ~/bin/xeq1
   cp ~/bin/daemon ~/bin/xeq2
   cp ~/bin/daemon ~/bin/xeq3
