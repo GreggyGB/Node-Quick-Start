@@ -1,0 +1,11 @@
+[Unit]
+Description=equilibria service node2
+After=network-online.target
+[Service]
+Type=simple
+User=root
+ExecStart=/root/bin/xeq2 --non-interactive --service-node --p2p-bind-port 9240 --rpc-bind-port 9241 --zmq-rpc-bind-port 9242 --data-dir ~/.equilibria2
+Restart=always
+RestartSec=30s
+[Install]
+WantedBy=multi-user.target
