@@ -4,7 +4,7 @@ After=network-online.target
 [Service]
 Type=simple
 User=root
-ExecStart=/root/bin/xeq3 --non-interactive --service-node --p2p-bind-port 9330 --rpc-bind-port 9331 --zmq-rpc-bind-port 9332 --data-dir ~/.equilibria3
+ExecStart=/root/bin/xeq3 --non-interactive --service-node --p2p-bind-port 9250 --rpc-bind-port 9251 --zmq-rpc-bind-port 9252 --data-dir ~/.equilibria3
 Restart=always
 RestartSec=30s
 [Install]
