@@ -7,29 +7,12 @@ sudo apt install git
 
 install_node () {
   cd
-  sudo apt install wget unzip
-  sudo apt update
-  sudo apt-get install  build-essential cmake pkg-config libboost-all-dev libssl-dev libzmq3-dev libunbound-dev libsodium-dev libunwind8-dev liblzma-dev libreadline6-dev libldns-dev libexpat1-dev doxygen graphviz libpgm-dev qttools5-dev-tools libhidapi-dev libusb-dev libprotobuf-dev protobuf-compiler
-  git clone --recursive 'https://github.com/EquilibriaCC/Equilibria.git' equilibria && cd equilibria
-  git submodule init && git submodule update
-  git checkout v17.1.0
-  make
-
-  cd build/Linux/_HEAD_detached_at_v17.1.0_/release && mv bin ~/
-  
-  rm /etc/systemd/system/eqnode.service
-  rm /etc/systemd/system/eqnode2.service
   rm /etc/systemd/system/eqnode3.service
-  sudo cp ~/Equilibria/eqnode.service /etc/systemd/system/
-  cp ~/bin/daemon ~/bin/xeq1
-  cp ~/bin/daemon ~/bin/xeq2
+  sudo cp ~/Equilibria/eqnode3.service /etc/systemd/system/
+  rm ~/bin/xeq3
   cp ~/bin/daemon ~/bin/xeq3
   sudo systemctl daemon-reload
-  sudo systemctl enable eqnode.service
-  sudo systemctl enable eqnode2.service
   sudo systemctl enable eqnode3.service
-  sudo systemctl start eqnode.service
-  sudo systemctl start eqnode2.service
   sudo systemctl start eqnode3.service
 }
 
@@ -78,23 +61,7 @@ print_sn_key () {
 }
 
 fork_update () {
-  rm -r ~/Equilibria/equilibria
-  git clone --recursive 'https://github.com/EquilibriaCC/Equilibria.git' equilibria && cd equilibria
-  git submodule init && git submodule update
-  git checkout v17.1.0
-  make
-  sudo systemctl stop eqnode.service
-  rm -r ~/bin
-  cd build/Linux/_HEAD_detached_at_v17.1.0_/release && mv bin ~/
-  cp ~/bin/daemon ~/bin/xeq1
-  cp ~/bin/daemon ~/bin/xeq2
-  cp ~/bin/daemon ~/bin/xeq3
-  sudo systemctl enable eqnode.service
-  sudo systemctl start eqnode.service
-  sudo systemctl enable eqnode2.service
-  sudo systemctl start eqnode2.service
-  sudo systemctl enable eqnode3.service
-  sudo systemctl start eqnode3.service
+  echo This is only available from equilibria.sh
 }
 
 case "$1" in
