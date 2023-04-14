@@ -43,7 +43,8 @@ start () {
 }
 
 status () {
-  bash equilibria.sh status && bash equilibria2.sh status && bash equilibria3.sh status
+  ~/bin/xeq1 status
+  bash equilibria2.sh status && bash equilibria3.sh status
   #systemctl status eqnode.service
 }
 
