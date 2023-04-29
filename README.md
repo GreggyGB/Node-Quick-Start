@@ -50,6 +50,8 @@ If you come across any issues, please visit node operators chats.
 
 `bash equilibria.sh print_sn_key`
 
+These commands are available for 2nd and 3rd node with replacing equilibria.sh with equilibria<b>2</b>.sh or 3 for third node.
+
 ### To upgrade node to latest version:
 
 `bash equilibria.sh update`
