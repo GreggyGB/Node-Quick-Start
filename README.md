@@ -20,6 +20,18 @@
 
 `bash equilibria.sh start`
 
+### To start the 2nd service node
+`bash equilibria2.sh install`
+from Equilibria folder
+
+### To start the 3rd service node
+`bash equilibria3.sh install`
+from Equilibria folder
+
+I would recommend synchronising one by one on a lower specs machines.
+
+If you come across any issues, please visit node operators chats.
+
 ## Additional commands:
 
 ### To check service status:
