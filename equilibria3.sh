@@ -16,7 +16,6 @@ install_node () {
   sudo systemctl daemon-reload
   sudo systemctl enable eqnode3.service
   sudo systemctl start eqnode3.service
-
 }
 
 prepare_sn () {
