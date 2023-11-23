@@ -1,14 +1,16 @@
 #! /bin/bash
 
 install_checks () {
-sudo apt install git
-    install_node
+  install_node
 }
 
 install_node () {
-  cd
   rm /etc/systemd/system/eqnode2.service
   sudo cp ~/Equilibria/eqnode2.service /etc/systemd/system/
+  rm -r /~/.equilibria2
+  mkdir /~/.equilibria2
+  echo Cloning blockchain - please give me few minutes...
+  cp -r ~/.equilibria/lmdb /~/.equilibria2/
   rm ~/bin/xeq2
   cp ~/bin/daemon ~/bin/xeq2
   sudo systemctl daemon-reload
