@@ -1,19 +1,22 @@
 #! /bin/bash
 
 install_checks () {
-sudo apt install git
     install_node
 }
 
 install_node () {
-  cd
   rm /etc/systemd/system/eqnode3.service
   sudo cp ~/Equilibria/eqnode3.service /etc/systemd/system/
+  rm -r /~/.equilibria3
+  mkdir /~/.equilibria3
+  echo Cloning blockchain - please give me few minutes...
+  cp -r ~/.equilibria/lmdb /~/.equilibria3/
   rm ~/bin/xeq3
   cp ~/bin/daemon ~/bin/xeq3
   sudo systemctl daemon-reload
   sudo systemctl enable eqnode3.service
   sudo systemctl start eqnode3.service
+
 }
 
 prepare_sn () {
