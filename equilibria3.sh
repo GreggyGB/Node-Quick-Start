@@ -1,7 +1,7 @@
 #! /bin/bash
 
 install_checks () {
-    install_node
+  install_node
 }
 
 install_node () {
