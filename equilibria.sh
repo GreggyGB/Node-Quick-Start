@@ -91,12 +91,9 @@ fork_update () {
   cp ~/bin/daemon ~/bin/xeq1
   cp ~/bin/daemon ~/bin/xeq2
   cp ~/bin/daemon ~/bin/xeq3
-  sudo systemctl enable eqnode.service
-  sudo systemctl start eqnode.service
-  sudo systemctl enable eqnode2.service
-  sudo systemctl start eqnode2.service
-  sudo systemctl enable eqnode3.service
-  sudo systemctl start eqnode3.service
+  sudo systemctl restart eqnode.service
+  sudo systemctl restart eqnode2.service
+  sudo systemctl restart eqnode3.service
 }
 
 case "$1" in
